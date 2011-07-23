@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="rhaptos.swordservice.plone">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Rhaptos SwordService Plone Theme"
+      directory="profiles/default"
+      description='Extension profile for the "Rhaptos SwordService Plone Theme" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="rhaptos.swordservice.plone.various"
+      title="Rhaptos SwordService Plone Theme: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="rhaptos.swordservice.plone.setuphandlers.setupVarious">
+    <depends name="skins"/>
+  </genericsetup:importStep>
+
+</configure>

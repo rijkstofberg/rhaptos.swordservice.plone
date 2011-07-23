@@ -3,6 +3,12 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:five="http://namespaces.zope.org/five">
             
+    <interface
+        interface=".interfaces.IThemeSpecific"
+        type="zope.publisher.interfaces.browser.IBrowserSkinType"
+        name="Rhaptos SwordService Plone Theme"
+        />
+  
     <browser:page
         for="*"
         name="sword"
@@ -14,5 +20,17 @@
              zope.publisher.interfaces.http.IHTTPRequest"
         provides="zope.publisher.interfaces.IPublishTraverse"
         factory=".sword.SWORDTraversel" />
+
+    <browser:resourceDirectory
+        name="rhaptos.swordservice.plone.images"
+        directory="images"
+        layer=".interfaces.IThemeSpecific"
+        />
+
+    <browser:resourceDirectory
+        name="rhaptos.swordservice.plone.stylesheets"
+        directory="stylesheets"
+        layer=".interfaces.IThemeSpecific"
+        />
 
 </configure>
